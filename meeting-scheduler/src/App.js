@@ -1,6 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-import {Card, Button} from 'antd';
+import {Card, Button, Table} from 'antd';
+
+const tableColumns = [
+  {
+    title:'Host',
+    dataIndex:'host',
+    key:'host'
+  },
+  {
+    title:'Participants',
+    dataIndex:'participants',
+    key:'participants'
+  },
+  {
+    title:'Time',
+    dataIndex:'time',
+    key:'time'
+  },
+  {
+    title:'Location',
+    dataIndex:'location',
+    key:'location'
+  }
+
+];
 
 function App() {
   return (
@@ -10,10 +34,10 @@ function App() {
       </Card>
       <div style={{ display:'flex', 'justifyContent':'space-between',padding: '20px' }}>
       <Card title="Upcoming Meetings" style={{width:'47%', color: 'blue'}}>
-        upcoming Meetings
+        <Table columns={tableColumns}/>
       </Card>
       <Card title="Past Mettings" style={{width:'47%', color:"lightcoral"}}>
-      Past Meetings
+        <Table columns={tableColumns}/>
       </Card>
       </div>
     </div>
