@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import {Card, Button} from 'antd';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center' }}>
+      <Card title="Meetings">
+        <Button style={{ color: 'blue', background: 'lightblue' }}>Schedule Meeting</Button>
+      </Card>
+      <div style={{ display:'flex', 'justifyContent':'space-between',padding: '20px' }}>
+      <Card title="Upcoming Meetings" style={{width:'47%', color: 'blue'}}>
+        upcoming Meetings
+      </Card>
+      <Card title="Past Mettings" style={{width:'47%', color:"lightcoral"}}>
+      Past Meetings
+      </Card>
+      </div>
     </div>
   );
 }
