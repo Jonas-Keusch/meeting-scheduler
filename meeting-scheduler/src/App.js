@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
-import HomePage from './modules/HomePage';
-import InputForm from './modules/InputForm';
+import HomePage from './modules/HomePage/index.js';
+import InputForm from './modules/InputForm/index.js';
 
 function App() {
   return (
@@ -15,3 +15,4 @@ function App() {
 }
 
 export default App;
+
