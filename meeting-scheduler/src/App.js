@@ -1,46 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import {Card, Button, Table} from 'antd';
-
-const tableColumns = [
-  {
-    title:'Host',
-    dataIndex:'host',
-    key:'host'
-  },
-  {
-    title:'Participants',
-    dataIndex:'participants',
-    key:'participants'
-  },
-  {
-    title:'Time',
-    dataIndex:'time',
-    key:'time'
-  },
-  {
-    title:'Location',
-    dataIndex:'location',
-    key:'location'
-  }
-
-];
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import HomePage from './modules/HomePage';
+import InputForm from './modules/InputForm';
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Card title="Meetings">
-        <Button style={{ color: 'blue', background: 'lightblue' }}>Schedule Meeting</Button>
-      </Card>
-      <div style={{ display:'flex', 'justifyContent':'space-between',padding: '20px' }}>
-      <Card title="Upcoming Meetings" style={{width:'47%', color: 'blue'}}>
-        <Table columns={tableColumns}/>
-      </Card>
-      <Card title="Past Mettings" style={{width:'47%', color:"lightcoral"}}>
-        <Table columns={tableColumns}/>
-      </Card>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/inputForm" element={<InputForm />} />
+      </Routes>
+    </Router>
   );
 }
 
